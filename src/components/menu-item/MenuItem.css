@@ -1,0 +1,20 @@
+.appButtonWrapper {
+  border-radius: 4px;
+  cursor: pointer;
+  width: 140px;
+  padding: 8px 16px;
+  margin-bottom: 24px;
+
+  display: flex;
+  align-items: center;
+}
+
+.appButtonWrapper:hover {
+  box-shadow: -4px 4px 8px rgb(220, 219, 219);
+  background-color: rgb(252, 252, 252);
+  font-weight: 600;
+}
+
+.leftIcon {
+  margin-right: 12px;
+}

@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Analytics from "./pages/analytics/Analytics";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Management from "./pages/management/Management";
 import { MainRoutes } from "./routes";
 import { MenuItem } from "./components/menu-item/MenuItem";
+import { Page } from "./constant";
 
 function App() {
   const navigate = useNavigate();
@@ -15,15 +15,11 @@ function App() {
       <nav className="menuWrapper">
         <ul style={{ paddingLeft: "0px" }}>
           <MenuItem
-            labelText="Dashboard"
+            labelText={Page.Dashboard}
             onClick={() => navigate(MainRoutes.dashboard)}
           />
           <MenuItem
-            labelText="Analytics"
-            onClick={() => navigate(MainRoutes.analytics)}
-          />
-          <MenuItem
-            labelText="Management"
+            labelText={Page.Management}
             onClick={() => navigate(MainRoutes.management)}
           />
         </ul>
@@ -32,7 +28,6 @@ function App() {
       <div className="mainContent">
         <Routes>
           <Route path={MainRoutes.dashboard} element={<Dashboard />} />
-          <Route path={MainRoutes.analytics} element={<Analytics />} />
           <Route path={MainRoutes.management} element={<Management />} />
           <Route path="*" element={<Dashboard />} />
         </Routes>

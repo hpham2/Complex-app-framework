@@ -1,0 +1,11 @@
+.drawerWrapper {
+  width: 360px;
+  padding: 24px;
+}
+
+.buttonWrapper {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}

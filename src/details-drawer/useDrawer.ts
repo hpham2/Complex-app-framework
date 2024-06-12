@@ -34,8 +34,13 @@ export const useDrawer = (): UseDrawerReturnType => {
   }, [navigate]);
 
   const closeDrawer = useCallback(() => {
-    if (!!prefix) navigate(`/${prefix}`);
-  }, [navigate, prefix]);
+    const drawerUrlIndex = location.pathname.indexOf("/drawer");
+    console.log(drawerUrlIndex);
+    // if (drawerUrlIndex !== -1)
+    //   navigate(
+    //     `/${location.pathname.slice(0, location.pathname.indexOf("/drawer"))}`
+    //   );
+  }, [location.pathname, navigate]);
 
   return { openDrawer, goBack, closeDrawer };
 };

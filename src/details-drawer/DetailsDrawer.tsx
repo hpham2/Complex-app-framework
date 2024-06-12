@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { ShortDetail } from "./ShortDetail";
 import { LongDetail } from "./LongDetail";
+import { useDrawer } from "./useDrawer";
+import { CloseIcon } from "../components/icons/CloseIcon";
+import "./DetailsDrawer.css";
+import { BackIcon } from "../components/icons/BackIcon";
 
 export const enum drawerOptions {
   ShortDetails = "/short-detail",
@@ -10,6 +14,7 @@ export const enum drawerOptions {
 }
 
 const DetailsDrawer = () => {
+  const { goBack } = useDrawer();
   const location = useLocation();
   const [toggleDrawer, setToggleDrawer] = useState(false);
 
@@ -25,18 +30,31 @@ const DetailsDrawer = () => {
     <Drawer
       anchor={"right"}
       open={toggleDrawer}
+      ModalProps={{
+        sx: {
+          ".MuiBackdrop-root": {
+            backgroundColor: "transparent",
+          },
+        },
+      }}
       onClose={() => setToggleDrawer(false)}
     >
-      <Routes>
-        <Route
-          path={`/:prefix/drawer${drawerOptions.ShortDetails}/:drawerId`}
-          element={<ShortDetail />}
-        />
-        <Route
-          path={`/:prefix/drawer${drawerOptions.LongDetails}/:drawerId`}
-          element={<LongDetail />}
-        />
-      </Routes>
+      <div className="drawerWrapper">
+        <div className="buttonWrapper">
+          <BackIcon onClick={() => goBack()} />
+          <CloseIcon onClick={() => setToggleDrawer(false)} />
+        </div>
+        <Routes>
+          <Route
+            path={`/:prefix/drawer${drawerOptions.ShortDetails}/:drawerId`}
+            element={<ShortDetail />}
+          />
+          <Route
+            path={`/:prefix/drawer${drawerOptions.LongDetails}/:drawerId`}
+            element={<LongDetail />}
+          />
+        </Routes>
+      </div>
     </Drawer>
   );
 };

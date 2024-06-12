@@ -6,6 +6,7 @@ import Management from "./pages/management/Management";
 import { MainRoutes } from "./routes";
 import { MenuItem } from "./components/menu-item/MenuItem";
 import { Page } from "./constant";
+import DetailsDrawer from "./details-drawer/DetailsDrawer";
 
 function App() {
   const navigate = useNavigate();
@@ -32,6 +33,8 @@ function App() {
           <Route path="*" element={<Dashboard />} />
         </Routes>
       </div>
+
+      <DetailsDrawer />
     </div>
   );
 }

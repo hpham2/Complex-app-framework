@@ -1,5 +1,4 @@
 export enum MainRoutes {
-  dashboard = "/",
-  analytics = "/analytics",
+  dashboard = "/dashboard",
   management = "/management",
 }

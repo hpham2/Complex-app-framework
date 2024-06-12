@@ -1,0 +1,7 @@
+.rowsWrapper {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}

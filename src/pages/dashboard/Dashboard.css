@@ -1,0 +1,7 @@
+.cardListWrapper {
+  overflow-y: auto;
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

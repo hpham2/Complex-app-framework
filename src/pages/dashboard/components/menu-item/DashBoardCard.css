@@ -1,0 +1,21 @@
+.wrapper {
+  border-radius: 8px;
+  cursor: pointer;
+  width: 160px;
+  height: 160px;
+  padding: 24px 24px;
+  margin: 0 24px 24px 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.wrapper:hover {
+  box-shadow: -8px 8px 8px rgb(220, 219, 219);
+  background-color: rgb(252, 252, 252);
+  font-weight: 600;
+}
+
+.leftIcon {
+  margin-right: 12px;
+}
